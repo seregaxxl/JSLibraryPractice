@@ -2,10 +2,14 @@ import './lib/lib';
 import $ from './lib/lib';
 
 $('button').on('click', function () {
-    $('div').removeAtt('data-modal');
+    $('div').eq(2).toggleClass('active');
 });
 
-$('.ret').on('click', function () {
-    $('.active').addAtt('data-modal', '123');
+$('div').on('click', function () {
+    console.log($(this).index());
 });
+
+console.log($('div').eq(2).find('.more'));
+
+
 
