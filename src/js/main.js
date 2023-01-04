@@ -1,19 +1,34 @@
 import './lib/lib';
 import $ from './lib/lib';
 
-$('#first').click(function () {
-    $('.block-center').eq(0).fadeToggle(800);
-});
+$('.wrapper').html(
+    `
+    <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" id="dropdownMenuButton">Dropdown button</button>
+            <div class="dropdown-menu" data-toggle-id="dropdownMenuButton">
+                <a href="#" class="dropdown-item">Action</a>
+                <a href="#" class="dropdown-item">Action #2</a>
+                <a href="#" class="dropdown-item">Action #3</a>
+            </div>
+        </div>
+    `
+)
+$('.dropdown-toggle').dropDown();
+$('.okoko').dropDown();
+
+// $('#first').click(function () {
+//     $('.block-center').eq(0).fadeToggle(800);
+// });
 // $('button').getFirstElemByAtt('data-count', "second").click(function () {
 //     $('.block-center').eq(1).fadeOut(2000);
 // });
 
-$('[data-count="second"]').click(function () {
-    $('.block-center').eq(1).fadeToggle(800);
-});
-$('.btn.btn-warning').click(function () {
-    $('.block-center').fadeToggle(800);
-});
+// $('[data-count="second"]').click(function () {
+//     $('.block-center').eq(1).fadeToggle(800);
+// });
+// $('.btn.btn-warning').click(function () {
+//     $('.block-center').fadeToggle(800);
+// });
 
 
 
