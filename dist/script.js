@@ -297,6 +297,24 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.toggleAtt = function (at
   }
   return this;
 };
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.getFirstElemByAtt = function (attributeName, attributeValue) {
+  for (let i = 0; i < this.length; i++) {
+    if (!this[i].getAttribute(attributeName)) {
+      continue;
+    }
+    if (this[i].getAttribute(attributeName) === attributeValue) {
+      const swap = this[i];
+      const objLength = Object.keys(this).length;
+      for (let i = 0; i < objLength; i++) {
+        delete this[i];
+      }
+      this[0] = swap;
+      this.length = 1;
+      return this;
+    }
+  }
+  return 'there is no such element';
+};
 
 /***/ }),
 
@@ -500,10 +518,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/lib */ "./src/js/lib/lib.js");
 
 
-
-// $('button').on('click', function () {
-//     $('div').eq(2).toggleClass('active');
+Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('#first').click(function () {
+  Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('.block-center').eq(0).fadeOut(2000);
+});
+// $('button').getFirstElemByAtt('data-count', "second").click(function () {
+//     $('.block-center').eq(1).fadeOut(2000);
 // });
+
+Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('[data-count="second"]').click(function () {
+  Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('.block-center').eq(1).fadeOut(2000);
+});
+Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('.btn.btn-warning').click(function () {
+  Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('.block-center').fadeOut(2000);
+});
 
 // $('div').on('click', function () {
 //     console.log($(this).index());
@@ -512,7 +539,7 @@ __webpack_require__.r(__webpack_exports__);
 // console.log($('div').eq(2).find('.more'));
 
 // console.log($('.some').siblings('.findme'));
-Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('button').fadeIn(1800);
+// $('button').fadeIn(1800);
 
 /***/ })
 

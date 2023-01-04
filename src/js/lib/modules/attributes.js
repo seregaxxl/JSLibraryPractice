@@ -44,3 +44,22 @@ $.prototype.toggleAtt = function(attributeName, attributeValue) {
 
     return this;
 };
+
+$.prototype.getFirstElemByAtt = function(attributeName, attributeValue) {
+    for (let i = 0; i < this.length; i++) {
+        if(!this[i].getAttribute(attributeName)){
+            continue;
+        }
+        if(this[i].getAttribute(attributeName) === attributeValue){
+            const swap = this[i];
+            const objLength = Object.keys(this).length;
+            for (let i = 0; i < objLength; i++ ) {
+                    delete this[i];
+            }
+            this[0] = swap;
+            this.length = 1;
+            return this;
+        }
+    }
+    return 'there is no such element';
+};

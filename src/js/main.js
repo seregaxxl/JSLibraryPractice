@@ -1,9 +1,21 @@
 import './lib/lib';
 import $ from './lib/lib';
 
-// $('button').on('click', function () {
-//     $('div').eq(2).toggleClass('active');
+$('#first').click(function () {
+    $('.block-center').eq(0).fadeOut(2000);
+});
+// $('button').getFirstElemByAtt('data-count', "second").click(function () {
+//     $('.block-center').eq(1).fadeOut(2000);
 // });
+
+$('[data-count="second"]').click(function () {
+    $('.block-center').eq(1).fadeOut(2000);
+});
+$('.btn.btn-warning').click(function () {
+    $('.block-center').fadeOut(2000);
+});
+
+
 
 // $('div').on('click', function () {
 //     console.log($(this).index());
@@ -12,7 +24,7 @@ import $ from './lib/lib';
 // console.log($('div').eq(2).find('.more'));
 
 // console.log($('.some').siblings('.findme'));
-$('button').fadeIn(1800);
+// $('button').fadeIn(1800);
 
 
 
