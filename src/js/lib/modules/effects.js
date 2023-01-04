@@ -40,8 +40,6 @@ $.prototype.fadeIn = function(dur, disp, fin) {
 
 $.prototype.fadeOut = function(dur, fin) {
     for (let i = 0; i < this.length; i++ ) {
-        
-
         const _fadeOut = (complection) => {
             this[i].style.opacity = 1 - complection;
             if (complection === 1) {
@@ -55,3 +53,16 @@ $.prototype.fadeOut = function(dur, fin) {
 
     return this;
 };
+
+
+$.prototype.fadeToggle = function(dur,disp ,fin) {
+    for (let i = 0; i < this.length; i++ ) {
+        if(window.getComputedStyle(this[i]).display === 'none') {
+            $(this[i]).fadeIn(dur,disp,fin);
+        } else {
+            $(this[i]).fadeOut(dur,fin);
+        }
+    }
+    return this;
+};
+

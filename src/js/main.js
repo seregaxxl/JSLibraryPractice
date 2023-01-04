@@ -2,17 +2,17 @@ import './lib/lib';
 import $ from './lib/lib';
 
 $('#first').click(function () {
-    $('.block-center').eq(0).fadeOut(2000);
+    $('.block-center').eq(0).fadeToggle(800);
 });
 // $('button').getFirstElemByAtt('data-count', "second").click(function () {
 //     $('.block-center').eq(1).fadeOut(2000);
 // });
 
 $('[data-count="second"]').click(function () {
-    $('.block-center').eq(1).fadeOut(2000);
+    $('.block-center').eq(1).fadeToggle(800);
 });
 $('.btn.btn-warning').click(function () {
-    $('.block-center').fadeOut(2000);
+    $('.block-center').fadeToggle(800);
 });
 
 
