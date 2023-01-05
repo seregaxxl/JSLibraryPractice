@@ -15,16 +15,18 @@ $('.wrapper').html(
 )
 $('.dropdown-toggle').dropDown();
 $('.okoko').dropDown();
+$('[data-toggle="modal"]').modal();
 
 // $('#first').click(function () {
-//     $('.block-center').eq(0).fadeToggle(800);
+//     $('.card').eq(0).fadeIn(800);
 // });
+
 // $('button').getFirstElemByAtt('data-count', "second").click(function () {
 //     $('.block-center').eq(1).fadeOut(2000);
 // });
 
 // $('[data-count="second"]').click(function () {
-//     $('.block-center').eq(1).fadeToggle(800);
+//     $('.card').eq(0).fadeOut(800);
 // });
 // $('.btn.btn-warning').click(function () {
 //     $('.block-center').fadeToggle(800);

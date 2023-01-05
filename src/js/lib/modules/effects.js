@@ -36,6 +36,7 @@ $.prototype.fadeIn = function(dur, disp, fin) {
     }
 
     return this;
+
 };
 
 $.prototype.fadeOut = function(dur, fin) {
