@@ -13,9 +13,41 @@ $('.wrapper').html(
         </div>
     `
 )
-$('.dropdown-toggle').dropDown();
-$('.okoko').dropDown();
-$('[data-toggle="modal"]').modal();
+// $('.dropdown-toggle').dropDown();
+// $('.okoko').dropDown();
+// $('[data-toggle="modal"]').modal();
+$('#trigger').click(()=>$('#trigger').createModal({
+    text: {
+        title: 'modal title',
+        body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum minus doloremque '
+    },
+    btns: {
+        count: 3,
+        settings:[
+            [
+                'Close',
+                ['btn-danger', 'mr-10'],
+                true
+            ], 
+            [
+                'Save-changes',
+                ['btn-success'],
+                false,
+                () => {
+                    alert('данные сохранены');
+                }
+            ],
+            [
+                'Another button',
+                ['btn-warning', 'ml-10'],
+                false,
+                () => {
+                    alert('hello world');
+                }
+            ]
+        ]
+    }
+}));
 
 // $('#first').click(function () {
 //     $('.card').eq(0).fadeIn(800);
