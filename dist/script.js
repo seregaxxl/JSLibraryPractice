@@ -97,13 +97,41 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core */ "./src/js/lib/core.js");
 
+
+// $.prototype.accordion = function(headActiveClass = 'accordion-head-active', contentActiveClass =
+//  'accordion-content-active', paddings = 40) {
+//     for(let i =0; i < this.length; i++) {
+//         $(this[i]).click(()=>{ 
+//             if(this[i].classList.contains(headActiveClass)) {
+//                 $(this[i]).removeClass(headActiveClass)
+//                 .closest('.accordion')
+//                 .find('.accordion-content')
+//                 .removeClass(contentActiveClass);
+//             } else {
+//                 $(this[i])
+//                 .addClass(headActiveClass)
+//                 .siblings()
+//                 .removeClass(headActiveClass)
+//                 .closest('.accordion')
+//                 .find('.accordion-content')
+//                 .removeClass(contentActiveClass)
+//                 .eq(i)
+//                 .addClass(contentActiveClass);
+//             }
+
+//         });
+//     }
+// };
+
 _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.accordion = function () {
+  let headActiveClass = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'accordion-head-active';
+  let contentActiveClass = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'accordion-content-active';
   for (let i = 0; i < this.length; i++) {
     Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(this[i]).click(() => {
-      if (this[i].classList.contains('accordion-head-active')) {
-        Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(this[i]).removeClass('accordion-head-active').closest('.accordion').find('.accordion-content').removeClass('accordion-content-active');
+      if (this[i].classList.contains(headActiveClass)) {
+        Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(this[i]).removeClass(headActiveClass).closest('.accordion').find('.accordion-content').eq(i).removeClass(contentActiveClass);
       } else {
-        Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(this[i]).addClass('accordion-head-active').siblings().removeClass('accordion-head-active').closest('.accordion').find('.accordion-content').removeClass('accordion-content-active').eq(i).addClass('accordion-content-active');
+        Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(this[i]).addClass(headActiveClass).closest('.accordion').find('.accordion-content').eq(i).addClass(contentActiveClass);
       }
     });
   }
