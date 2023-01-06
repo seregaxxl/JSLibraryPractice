@@ -70,7 +70,7 @@ $.prototype.closest = function(selector) {
             this[i] = this[i].closest(selector);
             counter++;
         } else {
-            this[i] = 'there is no such closest';
+            this[i] = this[i];
             counter++;
         }
     }

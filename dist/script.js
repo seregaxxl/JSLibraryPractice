@@ -230,6 +230,28 @@ function calcScroll() {
 
 /***/ }),
 
+/***/ "./src/js/lib/components/tab.js":
+/*!**************************************!*\
+  !*** ./src/js/lib/components/tab.js ***!
+  \**************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core */ "./src/js/lib/core.js");
+
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.tab = function () {
+  for (let i = 0; i < this.length; i++) {
+    Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(this[i]).click(() => {
+      Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(this[i]).addClass('tab-item-active').siblings().removeClass('tab-item-active').closest('.tab').find('.tab-content').removeClass('tab-content-active').eq(Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(this[i]).index()).addClass('tab-content-active');
+    });
+  }
+};
+Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])('[data-tabpanel] .tab-item').tab();
+
+/***/ }),
+
 /***/ "./src/js/lib/core.js":
 /*!****************************!*\
   !*** ./src/js/lib/core.js ***!
@@ -280,6 +302,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_effects__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/effects */ "./src/js/lib/modules/effects.js");
 /* harmony import */ var _components_dropdown__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/dropdown */ "./src/js/lib/components/dropdown.js");
 /* harmony import */ var _components_modal__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/modal */ "./src/js/lib/components/modal.js");
+/* harmony import */ var _components_tab__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/tab */ "./src/js/lib/components/tab.js");
+
 
 
 
@@ -361,7 +385,7 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.closest = function (sele
       this[i] = this[i].closest(selector);
       counter++;
     } else {
-      this[i] = 'there is no such closest';
+      this[i] = this[i];
       counter++;
     }
   }
@@ -676,17 +700,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/lib */ "./src/js/lib/lib.js");
 
 
-Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('.wrapper').html(`
-    <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" id="dropdownMenuButton">Dropdown button</button>
-            <div class="dropdown-menu" data-toggle-id="dropdownMenuButton">
-                <a href="#" class="dropdown-item">Action</a>
-                <a href="#" class="dropdown-item">Action #2</a>
-                <a href="#" class="dropdown-item">Action #3</a>
-            </div>
-        </div>
-    `);
-// $('.dropdown-toggle').dropDown();
+
+// $('.wrapper').html(
+//     `
+//     <div class="dropdown">
+//             <button class="btn btn-primary dropdown-toggle" id="dropdownMenuButton">Dropdown button</button>
+//             <div class="dropdown-menu" data-toggle-id="dropdownMenuButton">
+//                 <a href="#" class="dropdown-item">Action</a>
+//                 <a href="#" class="dropdown-item">Action #2</a>
+//                 <a href="#" class="dropdown-item">Action #3</a>
+//             </div>
+//         </div>
+//     `
+// )
+Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('.dropdown-toggle').dropDown();
 // $('.okoko').dropDown();
 // $('[data-toggle="modal"]').modal();
 Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('#trigger').click(() => Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('#trigger').createModal({
